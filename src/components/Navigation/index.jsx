@@ -7,20 +7,20 @@ const navItems = [
         title: "Home"
     },
     {
-        to: "/News",
-        title: "News"
-    },
-    {
-        to: "/Dashboard",
-        title: "Dashboard"
-    },
-    {
         to: "/use-state",
         title: "UseState"
     },
     {
         to: "/hooks",
         title: "Hooks"
+    },
+    {
+        to: "/HOC",
+        title: "HOC"
+    },
+    {
+        to: "/Debounce",
+        title: "Debounce"
     },
     
 ]
