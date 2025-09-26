@@ -22,6 +22,14 @@ const navItems = [
         to: "/Debounce",
         title: "Debounce"
     },
+    {
+        to: "/TabsDemo",
+        title: "Tabs Demo"
+    },
+    {
+        to: "/Forms",
+        title: "Forms Demo"
+    },
     
 ]
 
