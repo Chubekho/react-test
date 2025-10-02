@@ -1,10 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <script>
+      const isDark = localStorage.getItem("theme") === "dark";
+      if (isDark) {
+        document.documentElement.classList.add("dark");
+      }
+      function toggleTheme() {
+        console.log(123);
+        
+        const nextTheme = isDark ? "light" : "dark";
+        localStorage.setItem("theme", nextTheme);
+        document.documentElement.classList.toggle("dark");
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

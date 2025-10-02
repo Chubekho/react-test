@@ -30,6 +30,10 @@ const navItems = [
         to: "/Forms",
         title: "Forms Demo"
     },
+    {
+        to: "/context-api",
+        title: "Context API"
+    },
     
 ]
 

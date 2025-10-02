@@ -1,4 +1,4 @@
-import { useState } from "react";
+import useFormValue from "@/hook/useFormValue";
 
 const styles = {
   wrapper: { margin: 20 },
@@ -10,28 +10,49 @@ const styles = {
   button: {
     background: "#ccc",
     padding: "2px 10px",
-    marginLeft: 10,
     border: "none",
     borderRadius: 4,
   },
 };
 
 function Forms() {
-  const [value, setValue] = useState("");
-  //   console.log(`Current state: ${value}`);
+  const [formValues, handleChange] = useFormValue({
+    email: "",
+    password: "",
+  });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(formValues);
+  };
+
+
+  
   return (
     <div style={styles.wrapper}>
       <h1 style={styles.heading}>Forms Demo</h1>
-      <input
-        type="text"
-        placeholder="type something. . ."
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <button style={styles.button} onClick={() => setValue("")}>
-        Clear
-      </button>
+      <form action="" onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Enter email"
+          name="email"
+          value={formValues.email}
+          onChange={handleChange}
+        />
+        <br />
+        <input
+          type="password"
+          placeholder="Enter password"
+          name="password"
+          value={formValues.password}
+          onChange={handleChange}
+        />
+        <br />
+        <button type="submit" style={styles.button}>
+          Submit
+        </button>
+      </form>
     </div>
   );
 }
