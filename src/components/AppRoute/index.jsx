@@ -1,33 +1,47 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
 
 import Home from "@/pages/Home";
 import UseState from "@/pages/UseState";
-import Hooks from "@/pages/Hooks"
-import HOC from "@/pages/HOC"
-import Debounce from "@/pages/Debounce"
+import Hooks from "@/pages/Hooks";
+import HOC from "@/pages/HOC";
+import Debounce from "@/pages/Debounce";
 import TabsDemo from "@/pages/TabsDemo";
 import Forms from "@/pages/Forms";
 import ContextAPI from "@/pages/ContextAPI";
-import Navigation from "../Navigation";
+import DefaultLayout from "@/layouts/DefaultLayout";
+import SidebarLayout from "@/layouts/SidebarLayout";
+import Test from "@/pages/Test";
+import RenderProps from "@/pages/RenderProps";
+import CustomHook from "@/pages/CustomHook";
 
 function AppRoutes() {
-    return (
-        <div>
-            <BrowserRouter>
-            <Navigation/>
-                <Routes>
-                    <Route index element={<Home/>}/>
-                    <Route path="/use-state" element={<UseState/>}/>
-                    <Route path="/hooks" element={<Hooks/>}/>
-                    <Route path="/HOC" element={<HOC/>}/>
-                    <Route path="/Debounce" element={<Debounce/>}/>
-                    <Route path="/TabsDemo" element={<TabsDemo/>}/>
-                    <Route path="/Forms" element={<Forms/>}/>
-                    <Route path="/context-api" element={<ContextAPI/>}/>
-                </Routes>
-            </BrowserRouter>
-        </div>
-    )
+  return (
+    <Router>
+      <Routes>
+        <Route element={<DefaultLayout />}>
+          {/* Default Layout */}
+
+          <Route index element={<Home />} />
+          <Route path="/use-state" element={<UseState />} />
+        </Route>
+
+        <Route element={<SidebarLayout />}>
+          {/* Sidebar Layout */}
+          <Route path="test" element={<Test />} />
+        </Route>
+
+        {/* No Layouts */}
+        <Route path="/hooks" element={<Hooks />} />
+        <Route path="/HOC" element={<HOC />} />
+        <Route path="/render-props" element={<RenderProps />} />
+        <Route path="/Debounce" element={<Debounce />} />
+        <Route path="/TabsDemo" element={<TabsDemo />} />
+        <Route path="/Forms" element={<Forms />} />
+        <Route path="/context-api" element={<ContextAPI />} />
+        <Route path="/custom-hook" element={<CustomHook />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default AppRoutes;

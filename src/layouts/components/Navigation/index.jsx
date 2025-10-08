@@ -11,6 +11,10 @@ const navItems = [
         title: "UseState"
     },
     {
+        to: "/test",
+        title: "Test"
+    },
+    {
         to: "/hooks",
         title: "Hooks"
     },

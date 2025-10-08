@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Debounce.module.scss";
-import useDebounce from "../../hook/useDebounce";
+import useDebounce from "../../hooks/useDebounce";
 
 function Debounce() {
   const [products, setProducts] = useState([]);

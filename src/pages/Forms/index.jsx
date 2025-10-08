@@ -1,4 +1,4 @@
-import useFormValue from "@/hook/useFormValue";
+import useFormValue from "@/hooks/useFormValue";
 
 const styles = {
   wrapper: { margin: 20 },
