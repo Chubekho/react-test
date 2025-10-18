@@ -7,7 +7,7 @@ const Provider = ({children}) => {
     const value = {
         theme,
         toggle() {
-            setTheme(theme === 'Light' ? "Dark" : "Light")
+            setTheme(theme === 'Light' ? 'Dark' : 'Light')
         }
     }
 

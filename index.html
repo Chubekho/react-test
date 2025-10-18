@@ -11,9 +11,8 @@
         document.documentElement.classList.add("dark");
       }
       function toggleTheme() {
-        console.log(123);
-        
         const nextTheme = isDark ? "light" : "dark";
+        console.log(nextTheme);
         localStorage.setItem("theme", nextTheme);
         document.documentElement.classList.toggle("dark");
       }

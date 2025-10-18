@@ -8,9 +8,7 @@ function DefaultLayout() {
     <div>
       <Header />
       <Navigation />
-      <div className="container">
-        <Outlet />
-      </div>
+      <Outlet />
       <Footer />
     </div>
   );

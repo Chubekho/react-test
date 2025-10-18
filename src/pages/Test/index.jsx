@@ -1,6 +1,9 @@
 function Test() {
     return (
-        <h1>Test Page</h1>
+        <div>
+            <h1>Test Page</h1>
+            <input type="checkbox" />
+        </div>
     )
 }
 

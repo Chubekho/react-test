@@ -22,15 +22,15 @@ function AppRoutes() {
           {/* Default Layout */}
 
           <Route index element={<Home />} />
-          <Route path="/use-state" element={<UseState />} />
         </Route>
 
         <Route element={<SidebarLayout />}>
+          <Route path="/use-state" element={<UseState />} />
           {/* Sidebar Layout */}
-          <Route path="test" element={<Test />} />
         </Route>
 
         {/* No Layouts */}
+        <Route path="test" element={<Test />} />
         <Route path="/hooks" element={<Hooks />} />
         <Route path="/HOC" element={<HOC />} />
         <Route path="/render-props" element={<RenderProps />} />

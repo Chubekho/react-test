@@ -1,4 +1,5 @@
-import { Context as ThemeContext} from "@/contexts/ThemeContext";
+import { Context as ThemeContext } from "@/contexts/ThemeContext";
+import { useContext } from "react";
 
 const styles = {
   wrapper: { margin: 20 },
@@ -16,31 +17,32 @@ const styles = {
 };
 
 function A() {
-  return <B />
+  return <B />;
 }
 
 function B() {
-  return <C />
+  return <C />;
 }
 
 function C() {
+  const { theme, toggle } = useContext(ThemeContext);
+  console.log(theme);
+  
   return (
     <div>
-      <button onClick={window.toggleTheme}>Toggle theme</button>
+      <h3>Curent theme: {theme}</h3>
+      <button onClick={toggle}>Toggle</button>
     </div>
-  )
+  );
 }
 
-
-function ContextAPI () {
-
-    return (
-        <div style={styles.wrapper}>
-            <h1 >Context API</h1>
-            <button></button>
-            <A />
-        </div>
-    )
+function ContextAPI() {
+  return (
+    <div style={styles.wrapper}>
+      <h1>Context API Demo</h1>
+      <A />
+    </div>
+  );
 }
 
 export default ContextAPI;
